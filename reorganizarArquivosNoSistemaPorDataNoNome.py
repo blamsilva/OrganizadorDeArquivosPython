@@ -23,8 +23,8 @@ termo_procura = anoMesAtual
 # Enquanto for diferente de data fim de busca no nome dos arquivos faça:
 while termo_procura != "200501":
     for  raiz, deretorios, arquivos in os.walk(caminho_procura):
-        for arquivo in arquivos:
-            if termo_procura in arquivo:
+        for arquivo in arquivos:                     
+            if termo_procura in arquivo[0:6]:
                 caminho_completo = os.path.join(raiz, arquivo)
                 nome_arquivo, ext_arquivo = os.path.splitext(arquivo)
                 if not os.path.exists(f"{caminho_procura}/{termo_procura}"):
